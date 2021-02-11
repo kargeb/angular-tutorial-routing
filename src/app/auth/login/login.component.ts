@@ -6,7 +6,7 @@ import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
   message: string;
@@ -14,13 +14,6 @@ export class LoginComponent {
   constructor(public authService: AuthService, public router: Router) {
     this.setMessage();
   }
-
-  // const navigationExtras: NavigationExtras = {
-  //   queryParamsHandling: 'preserve',
-  //   preserveFragment: true
-  // };
-
-  
 
   setMessage() {
     this.message = 'Logged ' + (this.authService.isLoggedIn ? 'in' : 'out');
@@ -32,16 +25,13 @@ export class LoginComponent {
     this.authService.login().subscribe(() => {
       this.setMessage();
       if (this.authService.isLoggedIn) {
-        // Usually you would use the redirect URL from the auth service.
-        // However to keep the example simple, we will always redirect to `/admin`.
         const redirectUrl = '/admin';
 
         const navigationExtras: NavigationExtras = {
           queryParamsHandling: 'preserve',
-          preserveFragment: true
+          preserveFragment: true,
         };
-        // Redirect the user
-        // this.router.navigate([redirectUrl]);
+
         this.router.navigate([redirectUrl], navigationExtras);
       }
     });
