@@ -10,6 +10,7 @@ import { HeroesModule } from './heroes/heroes.module';
 // import { CrisisListComponent } from './crisis-list/crisis-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CrisisCenterModule } from './crisis-center/crisis-center.module';
+import { AdminModule } from './admin/admin.module';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
 
 @NgModule({
@@ -19,11 +20,11 @@ import { ComposeMessageComponent } from './compose-message/compose-message.compo
     FormsModule,
     HeroesModule,
     CrisisCenterModule,
+    AdminModule,
     AppRoutingModule
   ],
   declarations: [
     AppComponent,
-    // CrisisListComponent,
     PageNotFoundComponent,
     ComposeMessageComponent
   ],
