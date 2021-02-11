@@ -7,6 +7,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
 
 import { AuthGuard } from './auth/auth.guard';
+import { SelectivePreloadingStrategyService } from './selective-preloading-strategy.service';
+
+SelectivePreloadingStrategyService
 
 const appRoutes: Routes = [
   // { path: 'crisis-center', component: CrisisListComponent },
@@ -23,7 +26,8 @@ const appRoutes: Routes = [
 },
 {
   path: 'crisis-center',
-  loadChildren: () => import('./crisis-center/crisis-center.module').then(m => m.CrisisCenterModule)
+  loadChildren: () => import('./crisis-center/crisis-center.module').then(m => m.CrisisCenterModule),
+  data: { preload: true }
 },
   { path: '',   redirectTo: '/heroes', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
@@ -34,7 +38,8 @@ const appRoutes: Routes = [
   RouterModule.forRoot(
       appRoutes,
       { enableTracing: true,
-        preloadingStrategy: PreloadAllModules } // <-- debugging purposes only
+        // preloadingStrategy: PreloadAllModules } // <-- debugging purposes only
+        preloadingStrategy: SelectivePreloadingStrategyService } // <-- debugging purposes only
       
     )
   ],
