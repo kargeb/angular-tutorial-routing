@@ -15,6 +15,13 @@ export class LoginComponent {
     this.setMessage();
   }
 
+  // const navigationExtras: NavigationExtras = {
+  //   queryParamsHandling: 'preserve',
+  //   preserveFragment: true
+  // };
+
+  
+
   setMessage() {
     this.message = 'Logged ' + (this.authService.isLoggedIn ? 'in' : 'out');
   }
@@ -29,8 +36,13 @@ export class LoginComponent {
         // However to keep the example simple, we will always redirect to `/admin`.
         const redirectUrl = '/admin';
 
+        const navigationExtras: NavigationExtras = {
+          queryParamsHandling: 'preserve',
+          preserveFragment: true
+        };
         // Redirect the user
-        this.router.navigate([redirectUrl]);
+        // this.router.navigate([redirectUrl]);
+        this.router.navigate([redirectUrl], navigationExtras);
       }
     });
   }
