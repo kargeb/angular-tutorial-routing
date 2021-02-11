@@ -1,0 +1,25 @@
+<div class="center">
+  <a routerLink=""> Back to main page</a>
+</div>
+
+<h1>Angular Router</h1>
+<nav>
+  <a routerLink="/routing/crisis-center" routerLinkActive="active"
+    >Crisis Center</a
+  >
+  <a routerLink="/routing/crises" routerLinkActive="active">Crises</a>
+</nav>
+
+<h2>CRISES</h2>
+<ul class="crises">
+  <li
+    *ngFor="let crisis of crises$ | async"
+    [class.selected]="crisis.id === selectedId"
+  >
+    <!-- <a [routerLink]="['/routing/crisis-center', crisis.id]"> -->
+    <a [routerLink]="[crisis.id]">
+      <span class="badge">{{ crisis.id }}</span
+      >{{ crisis.name }}
+    </a>
+  </li>
+</ul>
