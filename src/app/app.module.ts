@@ -10,6 +10,7 @@ import { HeroesModule } from './heroes/heroes.module';
 // import { CrisisListComponent } from './crisis-list/crisis-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CrisisCenterModule } from './crisis-center/crisis-center.module';
+import { ComposeMessageComponent } from './compose-message/compose-message.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { CrisisCenterModule } from './crisis-center/crisis-center.module';
   declarations: [
     AppComponent,
     // CrisisListComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ComposeMessageComponent
   ],
   bootstrap: [ AppComponent ]
 })
