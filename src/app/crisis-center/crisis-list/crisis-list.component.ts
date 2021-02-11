@@ -24,9 +24,9 @@ export class CrisisListComponent implements OnInit {
   selectedId: number;
 
   constructor(
-    private heroService: CrisisService,
+    // private heroService: CrisisService,
     private service: CrisisService,
-    private messageService: MessageService,
+    // private messageService: MessageService,
     private route: ActivatedRoute
   ) {}
 
