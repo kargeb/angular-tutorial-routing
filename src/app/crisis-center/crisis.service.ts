@@ -1,3 +1,4 @@
+import { BehaviorSubject } from 'rxjs';
 import { Injectable } from '@angular/core';
 
 import { Observable, of } from 'rxjs';
@@ -10,7 +11,10 @@ import { MessageService } from '../message.service';
   providedIn: 'root',
 })
 export class CrisisService {
+  static nextCrisisId = 100;
+  private crises$: BehaviorSubject<Crisis[]> = new BehaviorSubject<Crisis[]>(CRISES);
   constructor(private messageService: MessageService) {}
+
 
   getCrises(): Observable<Crisis[]> {
     // const crises = of(CRISES);
