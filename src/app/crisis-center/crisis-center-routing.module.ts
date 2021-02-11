@@ -8,7 +8,7 @@ import { CrisisCenterHomeComponent } from './crisis-center-home/crisis-center-ho
 
 const crisisCenterRoutes: Routes = [
   {
-    path: 'routing/crisis-center',
+    path: 'crisis-center',
     component: CrisisCenterComponent,
     children: [
       {
@@ -17,16 +17,16 @@ const crisisCenterRoutes: Routes = [
         children: [
           {
             path: ':id',
-            component: CrisisDetailComponent,
+            component: CrisisDetailComponent
           },
           {
             path: '',
-            component: CrisisCenterHomeComponent,
-          },
-        ],
-      },
-    ],
-  },
+            component: CrisisCenterHomeComponent
+          }
+        ]
+      }
+    ]
+  }
 ];
 
 @NgModule({

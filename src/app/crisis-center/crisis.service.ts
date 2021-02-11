@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Crisis } from './crisis';
 import { CRISES } from './mock-crises';
-import { MessageService } from '../../message.service';
+import { MessageService } from '../message.service';
 
 @Injectable({
   providedIn: 'root',
