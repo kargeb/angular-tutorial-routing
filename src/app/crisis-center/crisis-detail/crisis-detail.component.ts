@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Component, OnInit } from '@angular/core';
 import { Crisis } from '../crisis';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';

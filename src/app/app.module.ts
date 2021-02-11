@@ -9,13 +9,15 @@ import { HeroesModule } from './heroes/heroes.module';
 
 // import { CrisisListComponent } from './crisis-list/crisis-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { CrisisCenterModule } from './crisis-center/crisis-center.module';
 
 @NgModule({
   imports: [
-    BrowserModule,
+  BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     HeroesModule,
+    CrisisCenterModule,
     AppRoutingModule
   ],
   declarations: [
